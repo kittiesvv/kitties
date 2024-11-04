@@ -1,0 +1,456 @@
+<html>
+<head>
+    <base href="index.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitties Pad Rescue Inc. - Protecting and Caring for Animals</title>
+    <meta name="description" content="Kitties Pad Rescue Inc.: a sanctuary for abandoned and abused animals, providing love and care, and finding forever homes.">
+    <meta name="author" content="Kitties Pad Rescue Inc.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('gallery/dogs_1108099.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .navbar-brand {
+            font-family: 'Droid Sans', sans-serif;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .nav-link {
+            color: #34495e;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #e74c3c;
+        }
+        .btn-hero {
+            background-color: #e74c3c;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-hero:hover {
+            background-color: #c0392b;
+        }
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .section-heading h3 {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+        .service-box {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .service-box:hover {
+            transform: translateY(-10px);
+        }
+        .service-box i {
+            font-size: 3rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        .gallery-item {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        .testimonial {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #e74c3c;
+        }
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 50px 0;
+        }
+        .footer h4 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        .social-icons {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #ecf0f1;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #e74c3c;
+        }
+        .footer-bottom {
+            background-color: #1a252f;
+            color: #7f8c8d;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+        .upcoming-events {
+            background-color: #ecf0f1;
+            padding: 50px 0;
+        }
+        .event-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .event-date {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .featured-resource {
+            background-color: #3498db;
+            color: #fff;
+            padding: 50px 0;
+        }
+        .featured-resource img {
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Kitties Pad Rescue</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="abouus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Our Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Our Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#featured">Success Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donation.html">Donation</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="header">
+        <h1 class="display-3 mb-4">Kitties Pad Rescue</h1>
+        <h2 class="display-6 mb-5">A Safe Haven for Animals in Need</h2>
+        <a href="Contactus.html" class="btn btn-hero btn-lg">Learn More</a>
+        <p class="mt-4 small">Kitties Pad Rescue - EIN: 47-41292391</p>
+    </header>
+
+    <main>
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>About Kitties Pad Rescue</h2>
+                    <h3>Our mission is to prevent cruelty to animals and provide compassionate care.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <p>Kitties Pad Rescue is a 501(c)(3) nonprofit organization dedicated to animal protection and welfare. We provide a sanctuary for abandoned, abused, and neglected animals, offering them a second chance at a happy and healthy life.</p>
+                        <p>Your support is vital to our mission. Through donations, fostering, volunteering, or adopting, you can help us provide essential care, medical treatment, and loving homes for animals in need.  Thank you for joining us in creating a brighter future for these deserving creatures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-5 bg-light">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our Services</h2>
+                    <h3>Comprehensive Animal Care Solutions</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-paw"></i>
+                            <h3>Rescue Operations</h3>
+                            <p>We conduct rescue operations for abandoned and abused animals, providing immediate safety and care.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-home"></i>
+                            <h3>Foster Care</h3>
+                            <p>Our foster care program provides temporary homes for animals, giving them the love and attention they need.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-medkit"></i>
+                            <h3>Medical Care</h3>
+                            <p>We provide necessary medical treatments, vaccinations, and spay/neuter services to ensure the health of our animals.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <h3>Adoption Services</h3>
+                            <p>We facilitate the adoption process, connecting loving families with animals in need of forever homes.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-donate"></i>
+                            <h3>Donation Programs</h3>
+                            <p>Support our mission through monetary donations, supplies, or by sponsoring an animal's care.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-hands-helping"></i>
+                            <h3>Volunteer Opportunities</h3>
+                            <p>Join our team of dedicated volunteers and help us make a difference in the lives of animals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-5">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our Story</h2>
+                    <h3>Making a Difference, One Paw at a Time</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 gallery-item">
+                        <img src="gallery/cats_1643457.jpg" alt="Volunteer cuddling a rescued kitten" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h4>Providing Comfort and Care</h4>
+                            <p>Our volunteers dedicate their time to ensuring each animal feels loved and secure.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 gallery-item">
+                        <img src="gallery/wildlife_326900.jpg" alt="Veterinarian examining a rescued dog" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h4>Essential Medical Care</h4>
+                            <p>We partner with local veterinarians to provide essential medical services for our rescued animals.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 gallery-item">
+                        <img src="gallery/wildlife_46254.jpg" alt="A happy adopted dog playing in a park" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h4>Finding Forever Homes</h4>
+                           <p>We strive to find loving, forever homes for every animal in our care.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-5 bg-light">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>What People Are Saying</h2>
+                    <h3>Stories of Hope and Healing</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <img src="gallery/image_61.jpg" alt="Sarah M." class="img-fluid mx-auto d-block">
+                            <p>"Adopting Whiskers from Kitties Pad Rescue changed my life. He's brought so much joy into my home, and I'm so grateful for the organization's dedication to animal welfare."</p>
+                            <p class="font-weight-bold">- Sarah M.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <img src="gallery/image_62.jpg" alt="Mark T." class="img-fluid mx-auto d-block">
+                            <p>"I've been volunteering at Kitties Pad Rescue for a year now, and it's been an incredibly rewarding experience.  Seeing the animals thrive and find loving homes is truly inspiring."</p>
+                            <p class="font-weight-bold">- Mark T.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <img src="gallery/image_63.jpg" alt="Emily K." class="img-fluid mx-auto d-block">
+                            <p>"I donated to Kitties Pad Rescue because I believe in their mission. Knowing that my contribution helps provide care for animals in need makes me feel good."</p>
+                            <p class="font-weight-bold">- Emily K.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="upcoming-events">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Upcoming Events</h2>
+                    <h3>Join Us in Supporting Animals</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="event-card">
+                            <h4>Adoption Day</h4>
+                            <p class="event-date">Saturday, October 28th, 10:00 AM - 2:00 PM</p>
+                            <p>Meet and greet adorable adoptable animals at our next Adoption Day event!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="event-card">
+                            <h4>Fundraising Gala</h4>
+                            <p class="event-date">November 18th, 6:00 PM</p>
+                            <p>Join us for an evening of fun, food, and fundraising to support our mission.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="event-card">
+                            <h4>Volunteer Training</h4>
+                            <p class="event-date">December 2nd, 1:00 PM - 3:00 PM</p>
+                            <p>Learn how to become a valuable member of our volunteer team.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="featured" class="featured-resource">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h2>Success Story</h2>
+                        <h3>Meet Mittens, a rescued kitten who found her forever home.</h3>
+                        <p>Mittens was found abandoned and scared, but thanks to Kitties Pad Rescue, she received the care and love she needed to thrive.  She was adopted by a loving family and now enjoys a life full of cuddles and playtime. </p>
+                        <a href="Contactus.html" class="btn btn-light">Read More Success Stories</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="gallery/pexels-divinetechygirl-1181671.jpg" alt="Mittens the Kitten" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Us</h4>
+                    <p>Kitties Pad Rescue is dedicated to preventing cruelty to animals and providing a safe haven since 2015.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="abouus.html">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="Contactus.html">Contact Us</a></li>
+                        <li><a href="donation.html">Donations</a></li>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact Us</h4>
+                    <p>Kitties Pad Rescue<br>
+                    Texarkana, TX1</p>
+                    <p>Email: kittiesPadRescue@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <div class="container text-center">
+            <p>© 2024 Kitties Pad Rescue. All rights reserved. EIN: 47-41292391</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
